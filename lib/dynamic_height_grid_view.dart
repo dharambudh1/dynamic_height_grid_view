@@ -17,6 +17,7 @@ class DynamicHeightGridView extends StatelessWidget {
     this.controller,
     this.shrinkWrap = false,
     this.physics,
+    this.padding,
   }) : super(key: key);
   final IndexedWidgetBuilder builder;
   final int itemCount;
@@ -26,6 +27,7 @@ class DynamicHeightGridView extends StatelessWidget {
   final CrossAxisAlignment rowCrossAxisAlignment;
 
   final ScrollPhysics? physics;
+  final EdgeInsetsGeometry? padding;
   final ScrollController? controller;
   final bool shrinkWrap;
 
@@ -43,6 +45,7 @@ class DynamicHeightGridView extends StatelessWidget {
       controller: controller,
       shrinkWrap: shrinkWrap,
       physics: physics,
+      padding: padding,
       itemBuilder: (ctx, columnIndex) {
         return _GridRow(
           columnIndex: columnIndex,
